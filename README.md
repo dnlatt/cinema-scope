@@ -27,7 +27,8 @@ Cinema Scope is a modern, responsive movie discovery app built as part of my per
 
 ## 📸 Screenshots
 
-*Coming soon...* (or insert screenshots using markdown)
+![screencapture-localhost-5173-2025-06-01-17_12_38_compressed](https://github.com/user-attachments/assets/72f1bc69-3f10-4e7e-b5aa-89a5666e23f9)
+
 
 ## 🛠️ Getting Started
 
