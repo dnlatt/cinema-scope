@@ -14,6 +14,16 @@ jobs:
         with:
           node-version: 18
       - run: npm install
+      
+      - name: Inject Vite environment variables
+        run: |
+          echo "VITE_TMDB_API_KEY=${{ secrets.VITE_TMDB_API_KEY }}" >> .env
+          echo "VITE_TMDB_API_BASE_URL=${{ secrets.VITE_TMDB_API_BASE_URL }}" >> .env
+          echo "VITE_APPWRITE_END_POINT=${{ secrets.VITE_APPWRITE_END_POINT }}" >> .env
+          echo "VITE_APPWRITE_PROJECT_ID=${{ secrets.VITE_APPWRITE_PROJECT_ID }}" >> .env
+          echo "VITE_APPWRITE_DATABASE_ID=${{ secrets.VITE_APPWRITE_DATABASE_ID }}" >> .env
+          echo "VITE_APPWRITE_COLLECTION_ID=${{ secrets.VITE_APPWRITE_COLLECTION_ID }}" >> .env
+
       - run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
