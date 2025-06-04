@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Search from './components/Search.jsx'
 import Spinner from './components/Spinner.jsx'
 import MovieCard from './components/MovieCard.jsx'
+import MeteorRain from './components/MeteorRain.jsx'
 import { useDebounce } from 'react-use'
 import { getTrendingMovies, updateSearchCount } from './appwrite.js'
 
@@ -86,6 +87,7 @@ const App = () => {
 
   return (
     <main>
+      <MeteorRain />
       <div className="pattern"/>
 
       <div className="wrapper">
@@ -96,7 +98,7 @@ const App = () => {
           
           
           <img src="./hero.png" alt="Hero Banner" />
-          <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle</h1>
+          <h1>Discover Great <span className="text-gradient">Movies</span> — No Stress, Just Fun.</h1>
 
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
@@ -125,8 +127,8 @@ const App = () => {
             <p className="text-red-500">{errorMessage}</p>
           ) : (
             <ul>
-              {movieList.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} />
+              {movieList.map((movie, idx) => (
+                <MovieCard key={movie.id} movie={movie} index={idx} />
               ))}
             </ul>
           )}
